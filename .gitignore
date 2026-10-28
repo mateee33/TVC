@@ -1,0 +1,12 @@
+# data cache (large, reproducible via `tvc download`)
+data/
+!data/.gitkeep
+# python
+__pycache__/
+*.pyc
+*.egg-info/
+.pytest_cache/
+.venv/
+# runtime state
+state/
+*.log

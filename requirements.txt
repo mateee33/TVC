@@ -1,0 +1,7 @@
+numpy>=1.26
+pandas>=2.1
+scipy>=1.11
+pyarrow>=14
+requests>=2.31
+ccxt>=4.3
+pytest>=8
