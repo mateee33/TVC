@@ -44,7 +44,7 @@ that tail.
 | 01 Intraday / weekly seasonality | Not tradeable. The best in-sample hour window collapses out-of-sample (BTC Sharpe 0.37, ETH −0.24); deflated Sharpe ≈ 0.05–0.10 after 552 windows searched. |
 | 02 Funding as a daily directional signal | No reversal effect; extreme funding of either sign precedes *positive* next-day returns. Cross-sectional funding-reversal portfolio loses after costs. |
 | 03 Time-series momentum with vol targeting | Weakly positive (Sharpe 0.5–1.1 in-sample, 0.3–0.6 out-of-sample, t < 1) and no alpha over vol-scaled long-only beta (t = 1.6). |
-| 04 Cross-sectional momentum / reversal (all 900 USDT perps, weekly) | See `reports/04_xs_momentum.md`. |
+| 04 Cross-sectional momentum / reversal (all 900 USDT perps, weekly) | Momentum (not reversal) at 2–4 weeks: 28-day quintile portfolio Sharpe 0.96, out-of-sample 1.25 (t = 2.1), 28%/yr, but 34% drawdown, 41x turnover and deflated Sharpe 0.31 after 8 variants. Promising, unproven; not in the bot. |
 | 06 Cascade detected on hourly bars | Fades (out-of-sample Sharpe 0.35): most of the rebound happens in the first hour, so the bot runs on 5-minute bars. |
 
 ## Quickstart

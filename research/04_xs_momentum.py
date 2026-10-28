@@ -19,6 +19,8 @@ import pandas as pd
 from tvc.backtest import Costs, backtest_portfolio, stats
 from tvc.config import OOS_START
 from tvc.data import list_um_symbols
+import logging, sys
+logging.basicConfig(level=logging.INFO, format="%(asctime)s %(message)s", stream=sys.stdout)
 from tvc.research.common import Report, bv, summarize_variants
 
 PPY = 365
@@ -56,7 +58,7 @@ def quintile_portfolio(score: pd.DataFrame, sign: float, rebal: pd.DatetimeIndex
     longs = pos.clip(lower=0); shorts = pos.clip(upper=0)
     pos = 0.5 * longs.div(longs.sum(axis=1).replace(0, np.nan), axis=0).fillna(0.0) + 0.5 * shorts.div(shorts.abs().sum(axis=1).replace(0, np.nan), axis=0).fillna(0.0)
     # hold between rebalances
-    pos = pos.where(pos.index.isin(rebal)).ffill().fillna(0.0)
+    pos = pos[pos.index.isin(rebal)].reindex(pos.index).ffill().fillna(0.0)
     return pos
 
 
